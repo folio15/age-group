@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Group Classifier</title>
+</head>
+<body>
+    <center>
+    <h2>Age Group Classifier</h2>
+
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" />
+    <button onclick="classifyAge()">Submit</button>
+
+    <script>
+        function classifyAge() {
+            const age = parseInt(document.getElementById("age").value);
+            let message = "";
+
+            if (age >= 0 && age <= 12) {
+                message = "You are classified as a Child.";
+            } else if (age >= 13 && age <= 19) {
+                message = "You are classified as a Teenager.";
+            } else if (age >= 20 && age <= 64) {
+                message = "You are classified as an Adult.";
+            } else if (age >= 65) {
+                message = "You are classified as a Senior.";
+            } else {
+                message = "Please enter a valid age.";
+            }
+
+            // Display the classification result
+            alert(message);
+        }
+    </script>
+    </center>
+</body>
+</html>
